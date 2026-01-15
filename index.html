@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Registro Exitoso! - LAB for FOH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-primary': '#050505',
+                        'bg-secondary': '#06010f',
+                        'bg-card': '#0f0f0f',
+                        'cyan-400': 'rgb(34 211 238)',
+                        'cyan-500': 'rgb(6 182 212)',
+                        'purple-500': 'rgb(168 85 247)',
+                        'slate-300': 'rgb(203 213 225)',
+                        'slate-400': 'rgb(148 163 184)',
+                        'slate-500': 'rgb(100 116 139)',
+                        'emerald-400': 'rgb(52 211 153)',
+                        'emerald-500': 'rgb(16 185 129)',
+                        'whatsapp': '#25D366',
+                        'whatsapp-dark': '#128C7E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 600ms ease-out forwards; }
+        .animate-slide-up { animation: slideUp 600ms ease-out forwards; }
+        
+        body {
+            background-color: #050505;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, rgb(34 211 238), rgb(168 85 247));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-bg-cyan {
+            position: absolute;
+            background: rgb(6 182 212);
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .card-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+<body class="min-h-full">
+    <div id="root"></div>
+</body>
+</html>

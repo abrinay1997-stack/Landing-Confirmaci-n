@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle2, Mail, MessageCircle } from 'lucide-react';
+import { CheckCircle2, Mail, MessageCircle, Instagram, Globe, Facebook } from 'lucide-react';
 import Logo from './components/Logo';
 import EventCard from './components/EventCard';
 
@@ -78,10 +78,43 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Footer info */}
-        <footer className="text-[#666] text-[10px] uppercase tracking-[0.3em] pb-8 animate-fade-in" style={{ animationDelay: '600ms' }}>
-          LiveSync Pro &copy; 2025 • Panamá City
-        </footer>
+        {/* Social Links & Footer Section */}
+        <div className="w-full flex flex-col items-center gap-8 pt-8 border-t border-white/5 animate-fade-in" style={{ animationDelay: '600ms' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-xl">
+            {/* LiveSync Pro Socials */}
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.2em] opacity-60">Sigue a LiveSync Pro</h4>
+              <div className="flex items-center gap-4">
+                <a href="https://livesyncpro.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                  <Globe className="w-5 h-5" />
+                </a>
+                <a href="https://www.instagram.com/livesyncpro/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Audioconcept Socials */}
+            <div className="flex flex-col items-center md:items-end gap-3">
+              <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.2em] opacity-60 text-right">Sigue a Audioconcept</h4>
+              <div className="flex items-center gap-4">
+                <a href="https://audioconcept.com.pa/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                  <Globe className="w-5 h-5" />
+                </a>
+                <a href="https://www.instagram.com/audioconcept_pa/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://www.facebook.com/Audioconcept.com.pa" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <footer className="text-[#666] text-[10px] uppercase tracking-[0.2em] text-center max-w-md leading-relaxed px-4">
+            © 2026 LIVE SYNC PRO | AUDIO ENGINEERING. ALL RIGHTS RESERVED.
+          </footer>
+        </div>
       </main>
     </div>
   );

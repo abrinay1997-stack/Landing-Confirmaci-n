@@ -7,7 +7,7 @@ const EventCard: React.FC = () => {
     {
       icon: <Calendar className="text-cyan-400 w-5 h-5" />,
       label: "Fecha",
-      value: "13 de Febrero"
+      value: "6 de Febrero, 2026"
     },
     {
       icon: <Clock className="text-cyan-400 w-5 h-5" />,

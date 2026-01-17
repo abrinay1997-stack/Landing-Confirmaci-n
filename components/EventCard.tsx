@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar, Clock, MapPin, ExternalLink } from 'lucide-react';
 
 const EventCard: React.FC = () => {
   const details = [
@@ -17,7 +16,8 @@ const EventCard: React.FC = () => {
     {
       icon: <MapPin className="text-cyan-400 w-5 h-5" />,
       label: "Ubicación",
-      value: "Audio Concept, Plaza 61, Obarrio"
+      value: "Audio Concept, Plaza 61, Obarrio",
+      link: "https://maps.app.goo.gl/EL4tc2LmF97RDK9J9"
     }
   ];
 
@@ -43,9 +43,21 @@ const EventCard: React.FC = () => {
                 <span className="text-[10px] text-slate-500 uppercase tracking-widest mb-1">
                   {detail.label}
                 </span>
-                <span className="text-white text-lg font-medium">
-                  {detail.value}
-                </span>
+                {detail.link ? (
+                  <a 
+                    href={detail.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-white text-lg font-medium hover:text-cyan-400 transition-colors flex items-center gap-2 group/link"
+                  >
+                    {detail.value}
+                    <ExternalLink className="w-3 h-3 opacity-40 group-hover/link:opacity-100 transition-opacity" />
+                  </a>
+                ) : (
+                  <span className="text-white text-lg font-medium">
+                    {detail.value}
+                  </span>
+                )}
               </div>
             </div>
           ))}
@@ -53,7 +65,7 @@ const EventCard: React.FC = () => {
       </div>
 
       {/* Background decoration */}
-      <div className="absolute -bottom-8 -right-8 opacity-5 group-hover:opacity-10 transition-opacity">
+      <div className="absolute -bottom-8 -right-8 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
         <Calendar className="w-32 h-32 text-white" />
       </div>
     </div>

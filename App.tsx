@@ -1,10 +1,11 @@
-
 import React from 'react';
 import { CheckCircle2, Mail, MessageCircle, Instagram, Globe, Facebook } from 'lucide-react';
 import Logo from './components/Logo';
 import EventCard from './components/EventCard';
 
 const App: React.FC = () => {
+  const MAP_URL = "https://maps.app.goo.gl/EL4tc2LmF97RDK9J9";
+
   return (
     <div className="relative min-h-screen flex flex-col items-center p-4 py-12 md:py-20">
       {/* Background Decorative Glows */}
@@ -54,13 +55,30 @@ const App: React.FC = () => {
             {[
               { text: 'Acceso al evento', icon: '🎫' },
               { text: 'Agenda detallada', icon: '📅' },
-              { text: 'Mapa de ubicación', icon: '🗺️' }
-            ].map((item, idx) => (
-              <li key={idx} className="bg-bg-card border border-white/5 p-4 rounded-xl flex flex-col items-center text-center gap-2 group hover:border-cyan-500/30 transition-all duration-300">
-                <span className="text-2xl mb-1">{item.icon}</span>
-                <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest leading-tight">{item.text}</span>
-              </li>
-            ))}
+              { text: 'Mapa de ubicación', icon: '🗺️', link: MAP_URL }
+            ].map((item, idx) => {
+              const content = (
+                <>
+                  <span className="text-2xl mb-1">{item.icon}</span>
+                  <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest leading-tight">{item.text}</span>
+                </>
+              );
+              const className = "bg-bg-card border border-white/5 p-4 rounded-xl flex flex-col items-center text-center gap-2 group hover:border-cyan-500/30 transition-all duration-300 w-full";
+              
+              return (
+                <li key={idx} className="flex">
+                  {item.link ? (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className={className}>
+                      {content}
+                    </a>
+                  ) : (
+                    <div className={className}>
+                      {content}
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
 
           <div className="pt-8 border-t border-white/5 flex flex-col items-center gap-8">
@@ -112,7 +130,7 @@ const App: React.FC = () => {
           </div>
 
           <footer className="text-[#666] text-[10px] uppercase tracking-[0.2em] text-center max-w-md leading-relaxed px-4">
-            © 2026 LIVE SYNC PRO | AUDIO ENGINEERING. ALL RIGHTS RESERVED.
+            © 2026 LIVESYNC PRO | AUDIO ENGINEERING. ALL RIGHTS RESERVED.
           </footer>
         </div>
       </main>
